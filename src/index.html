@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lift Simulation</title>
+    <link rel="shortcut icon" href="../Lift-Simulation-Example.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    hello
+    <form class="form-section padding-sm">
+        <h2 class="text-center">Lift Simulation</h2>
+        <div class="center">
+            <label for="">Number of Floors</label>
+            <input type="number"  placeholder="floors"id="floors"/>
+            <br/>
+            <label for="">Number of Lifts </label>
+            <input type="number" placeholder="lifts"id="lifts"/>
+            <button type="submit"id="submit"class="margin-sm">
+                Submit
+            </button>
+        </div>
+        <hr/>
+    </form>
+    <section class="floor-section"></section>
+    <script src="./js/main.js"></script>
 </body>
 </html>
