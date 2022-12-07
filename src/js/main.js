@@ -1,4 +1,5 @@
 const submitButton=document.querySelector("#submit")
+const resetButton=document.querySelector("#reset-button")
 const div=document.createElement("div")
 const button=document.createElement("button")
 const liftSimulationHandler=(e)=>{
@@ -6,6 +7,7 @@ const liftSimulationHandler=(e)=>{
     const floorInput= +document.querySelector("#floors").value;
     const liftInput= +document.querySelector("#lifts").value;
     const floorSection=document.querySelector(".floor-section")
+    floorSection.innerHTML=""
     let liftsAvailble=[];
     let floorInputOutline=document.querySelector("#floors")
     const liftInputOutline= document.querySelector("#lifts")
@@ -16,6 +18,8 @@ const liftSimulationHandler=(e)=>{
     }else{
         floorInputOutline.setAttribute("class","corrected-field")
         liftInputOutline.setAttribute("class","corrected-field")
+        if(floorInput===0){ alert("please enter number of floors")}
+        if(liftInput===0){alert("please enter number of lifts")}
     }
    for (let i=floorInput; i>0; i--) {
     const floors= document.createElement("div");
@@ -28,7 +32,9 @@ const liftSimulationHandler=(e)=>{
         <div class="row lift-section row-gap floor-right-side"></div>
     </div>`
     floors.style.width=`${130+liftInput*120}px`
-    floorSection.appendChild(floors)
+    if(floorInput&&liftInput){
+        floorSection.appendChild(floors)
+    }
     let leftSide=floors.querySelector(".floor-left-side")
     let upButton=document.createElement("button");
     upButton.innerText="↑"
