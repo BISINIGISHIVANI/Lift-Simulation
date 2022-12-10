@@ -27,11 +27,12 @@ const liftSimulationHandler=(e)=>{
     floors.setAttribute("data-floor-number",`${i}`)
     floors.innerHTML=`<div class="row">
         <div class="center floor-left-side">
-        <span>Floor-${i}</span>
+        <span class="padding-sm"><b>Floor-${i}</b></span>
         </div>
         <div class="row lift-section row-gap floor-right-side"></div>
     </div>`
-    floors.style.width=`${130+liftInput*120}px`
+    console.log(floors)
+    floors.style.width=`${130+(liftInput*70*2)}px`
     if(floorInput&&liftInput){
         floorSection.appendChild(floors)
     }
@@ -119,7 +120,7 @@ const liftSimulationHandler=(e)=>{
     lift.setAttribute("data-lift-status","busy")
     let distance=Math.abs(Number(lift.dataset.liftCurrent)-position)
         lift.style.transition=`transform ${distance*2}s`
-        lift.style.transform=`translateY(${-72*(position-1)}px)`
+        lift.style.transform=`translateY(${-150*(position-1)}px)`
     openLiftDoor(lift,position)
     console.log(lift);
     setTimeout(() => {
