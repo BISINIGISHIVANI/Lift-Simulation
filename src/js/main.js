@@ -32,7 +32,7 @@ const liftSimulationHandler=(e)=>{
         <div class="row lift-section row-gap floor-right-side"></div>
     </div>`
     console.log(floors)
-    floors.style.width=`${130+(liftInput*70*2)}px`
+    floors.style.width=`${130+(liftInput*80*2)}px`
     if(floorInput&&liftInput){
         floorSection.appendChild(floors)
     }
